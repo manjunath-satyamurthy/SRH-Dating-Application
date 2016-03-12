@@ -1,0 +1,26 @@
+<ion-view view-title="Login" align-title="left">
+    <ion-content style="background: url(img/login.png) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="app-icon"></div>
+                <h1>Campus Dating</h1>
+            </div>
+        </div>
+
+
+<div ng-controller="validateLogin as vl">
+    <div class="list list-inset">
+        <label class="item item-input">
+            <input type="text" placeholder="User id" ng-model="vl.userId">
+        </label>
+        <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="vl.password">
+        </label>
+    </div>
+
+    <div class="padding">
+        <button id="loginBTN" class="button button-full button-assertive ink">Login</button>
+    </div>
+</div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,135 @@
+<ion-view view-title="Profile">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/daenerys.jpg');">
+            <span class="right-buttons">
+                <button class="button button-assertive button-fab activated">
+                    <i class="icon ion-edit"></i>
+                </button>
+            </span>
+        </div>
+
+        <div class="tabs tabs-dark tabs-icon-top static" ng-controller="customTabs">
+            <a id="basicInfo" class="tab-item custom-tabs tabSelected">
+                <i class="icon ion-ios-information-outline"></i> Basic Info
+            </a>
+            <a id="interests" class="tab-item custom-tabs">
+                <i class="icon ion-android-star"></i> Interests
+            </a>
+            <a id="lookingFor" class="tab-item custom-tabs">
+                <i class="icon ion-android-search"></i> Looking For
+            </a>
+        </div>
+        <div class="basicInfo tabviews">
+            <div class="list basicInfo">
+              <a class="item">
+                <div class="leftSide">First Name</div> <div id="firstname" class="rightSide">Manjunath</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Last Name</div> <div id="lastname" class="rightSide">Satyamurthy</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Age</div> <div id="age" class="rightSide">24</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Sex</div> <div id="sex" class="rightSide">Male</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Height</div> <div id="ethnicity" class="rightSide">5.5</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Weight</div> <div id="ethnicity" class="rightSide">75</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Body Type</div> <div id="ethnicity" class="rightSide">average</div>
+              </a>
+              <a class="item">
+                <div class="leftSide">Ethinicity</div> <div id="ethnicity" class="rightSide">Indian</div>
+              </a>
+
+
+
+            </div>
+        </div>
+        <div class="interests tabviews" style="display: none;">
+            <div class="list interests">
+              <a class="item">
+                <div class="leftSide">Music</div> <div id="music" class="rightSide">Rock</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Food Habits</div> <div id="food" class="rightSide">Indian</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Driking</div> <div id="drink" class="rightSide">Yes</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Smoking</div> <div id="smoke" class="rightSide">Yes</div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Books</div> <div id="books" class="rightSide">Something</div>
+              </a>
+
+            </div>
+        </div>
+        <div class="lookingFor tabviews" style="display: none;">
+            <div class="list lookingFor">
+              <a class="item">
+                <div class="leftSide">Partner</div> <div id="partner" class="rightSide">
+                    <span id="paternerLeft" class="partner leftArrow ion ion-arrow-left-a"></span>
+                    <span id="partnerValue" class="customParagraph">Female</span>
+                    <span id="partnerRight" class="partner rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Height</div>
+                <div id="height" class="rightSide">
+                    <input id="heightSub" type='button' value='-' class='height minus'/>
+                    <span id="heightValue" class="customParagraph">5.0</span>
+                    <input id="heightAdd" type='button' value='+' class='height plus' field='quantity' />
+                </div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Complexion</div>
+                <div id="complexion" class="rightSide">
+                    <span id="complexionLeft" class="complexion leftArrow ion ion-arrow-left-a"></span>
+                    <span id="complexionValue" class="customParagraph">Fair</span>
+                    <span id="complexionRight" class="complexion rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Body type</div>
+                <div id="body" class="rightSide">
+                    <span id="bodyLeft" class="body leftArrow ion ion-arrow-left-a"></span>
+                    <span id="bodyValue" class="customParagraph">Slim</span>
+                    <span id="bodyRight" class="body rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </a>
+
+              <a class="item">
+                <div class="leftSide">Age between</div>
+                <div id="age" class="rightSide">
+                    <input id="subtract" type='button' value='-' class='age minus'/>
+                    <span id="fromAge" class="customParagraph selectedAge ageselect">18</span>
+                    <span class="customParagraph">-</span>
+                    <span id="toAge" class="customParagraph ageselect">30</span>
+                    <input id="add" type='button' value='+' class='age plus' field='quantity' />
+                </div>
+              </a>
+
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>

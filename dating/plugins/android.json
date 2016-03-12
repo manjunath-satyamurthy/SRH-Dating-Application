@@ -7,8 +7,23 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
+        },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.srh.dating"
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.ionicframework.dating283356"
         }
     },
     "dependent_plugins": {}

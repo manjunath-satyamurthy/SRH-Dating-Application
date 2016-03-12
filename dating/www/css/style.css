@@ -1,0 +1,231 @@
+/* tinder effect */
+
+td-cards {
+  display: block;
+}
+
+td-card {
+  position: absolute;
+  left: 50%;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
+
+  border: 1px solid #999;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 6px;
+}
+/*
+td-card.card-0 {
+  -webkit-transform: translate3d(0, 0px, 0);
+  transform: translate3d(0, 0px, 0);
+  top: 0px;
+  z-index: 10;
+}
+td-card.card-1 {
+  -webkit-transform: translate3d(0, 4px, 0);
+  transform: translate3d(0, 4px, 0);
+  z-index: 9;
+}
+td-card.card-2 {
+  -webkit-transform: translate3d(0, 8px, 0);
+  transform: translate3d(0, 8px, 0);
+  z-index: 8;
+}
+*/
+
+td-card .image {
+  position: relative;
+}
+
+td-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.yes-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  color: rgb(111, 250, 111);
+  opacity: 0;
+}
+.no-text {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: rgb(255, 115, 115);
+  opacity: 0;
+}
+
+.fade {
+  -webkit-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+  opacity: 0;
+}
+
+/* tinder effect */
+
+/* General
+==================================*/
+h1 {
+    color: #fff;
+    text-shadow: 0 1px 0px #000;
+    font-size: 45px;
+}
+
+
+/* Utilities
+==================================*/
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+p {
+    color: #555;
+    margin: 0 0 25px;
+}
+
+.scroll {
+    height: 100%;
+}
+
+
+/* Menu
+==================================*/
+
+.bar-assertive-900{
+    background-color:#0D47A1;
+}
+
+.menu .bar.bar-header.expanded {
+    -webkit-transition: all 500ms ease-out;
+    -moz-transition: all 500ms ease-out;
+    -o-transition: all 500ms ease-out;
+    transition: all 500ms ease-out;
+
+
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #1E1E1E;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+
+/* Login
+==================================*/
+.app-icon {
+    background-color: #fff;
+    background: url('../img/crown.png') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.social-login {
+    position: fixed;
+    bottom: 0;
+}
+
+.tabSelected {
+    background-color: #AAAAAA;
+}
+
+.basicInfo, .interests, .lookingFor{
+    background-color: #009688;    
+}
+
+.leftSide {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    color: white;
+}
+
+
+.rightSide {
+    /*background-color: #90CAF9;*/
+    width: 50%;
+    color: white;
+    display: inline-block;
+    float: right;
+    text-align: center;
+}
+
+.right-buttons {
+    text-align: right;
+}
+
+.customInput {
+    width: 100%;
+    background-color: #B2DFDB;
+    color: 000;
+}
+
+
+span.customParagraph {
+    display: inline;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.plus, .minus { 
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    background-color: #424242;
+    color: white;
+    border: none;
+}
+
+.leftArrow, .rightArrow {
+    color: #424242;
+    border: none;
+    font-size: 20px;
+}
+
+.selectedAge {
+    padding: 3px;
+    background-color: #004D40;
+}
+
+.customContent {
+    background-color: #F8BBD0;
+    height: 100%;
+    width: 100%;
+}
