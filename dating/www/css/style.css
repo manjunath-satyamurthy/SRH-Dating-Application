@@ -1,5 +1,4 @@
 /* tinder effect */
-
 td-cards {
   display: block;
 }
@@ -7,34 +6,16 @@ td-cards {
 td-card {
   position: absolute;
   left: 50%;
-  margin-top: 80px;
+  margin-top: 8%;
   margin-bottom: 40px;
   margin-left: -150px;
   width: 300px;
   height: 300px;
 
   border: 1px solid #999;
-  box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+  /*box-shadow: 0px 1px 3px rgba(0,0,0,0.2);*/
   border-radius: 6px;
 }
-/*
-td-card.card-0 {
-  -webkit-transform: translate3d(0, 0px, 0);
-  transform: translate3d(0, 0px, 0);
-  top: 0px;
-  z-index: 10;
-}
-td-card.card-1 {
-  -webkit-transform: translate3d(0, 4px, 0);
-  transform: translate3d(0, 4px, 0);
-  z-index: 9;
-}
-td-card.card-2 {
-  -webkit-transform: translate3d(0, 8px, 0);
-  transform: translate3d(0, 8px, 0);
-  z-index: 8;
-}
-*/
 
 td-card .image {
   position: relative;
@@ -42,30 +23,66 @@ td-card .image {
 
 td-card img {
   max-width: 100%;
-  border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #004D40
+  border-bottom-style: none;
+  margin-bottom: -6px;
 }
 
 .yes-text {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 30px;
+  top: 20px;
+  left: 20px;
+  font-size: 20px;
   color: rgb(111, 250, 111);
   opacity: 0;
+  padding: 2px;
+  border-style: solid;
+  border-radius: 6px;
+  border-width: 2px;
+  border-color: rgb(111, 250, 111);
 }
 .no-text {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
+  top: 20px;
+  right: 20px;
+  padding: 2px;
+  font-size: 20px;
   color: rgb(255, 115, 115);
   opacity: 0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: rgb(255, 115, 115);
+
 }
 
 .fade {
   -webkit-transition: 0.2s opacity linear;
   transition: 0.2s opacity linear;
   opacity: 0;
+}
+
+.profileInfo {
+    position: relative;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 4px;
+    border-style: solid;
+    border-width: 2px;
+    border-top-style: none;
+    border-color: #004D40;
+    background-color: #009688;
+}
+
+.profileInformation {
+  padding: 1px;
+  margin: 1px;
+  color: #FFFFFF;
+  border-color: #004D40;
 }
 
 /* tinder effect */
@@ -100,7 +117,7 @@ p {
 ==================================*/
 
 .bar-assertive-900{
-    background-color:#0D47A1;
+    background-color:#004D40;
 }
 
 .menu .bar.bar-header.expanded {
@@ -225,7 +242,13 @@ span.customParagraph {
 }
 
 .customContent {
-    background-color: #F8BBD0;
-    height: 100%;
+    position: absolute;
+    display: inline;
+    top: 85%;
     width: 100%;
+}
+
+.decideBTN {
+  right: 30%;
+  margin-left: 10%;
 }

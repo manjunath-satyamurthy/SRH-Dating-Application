@@ -1,7 +1,56 @@
 /* global angular, document, window */
 'use strict';
 
-angular.module('controllers', [])
+angular.module('controllers', ['ionic.contrib.ui.tinderCards', 'ionic'])
+
+
+  .controller('CardsCtrl', function($scope, TDCardDelegate) {
+  console.log('CARDS CTRL');
+  var cardTypes = [
+    { image: 'https://pbs.twimg.com/profile_images/696212819570655232/UJYdhVYj.jpg' },
+    { image: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg' },
+    { image: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png' },
+    { image: 'https://pbs.twimg.com/profile_images/692904108424982528/0PESpDwT.jpg'}
+  ];
+
+  $scope.cards = Array.prototype.slice.call(cardTypes, 0);
+
+  $scope.cardDestroyed = function(index) {
+    console.log("cards are destroyed")
+    $scope.cards.splice(index, 1);
+  };
+
+  $scope.addCard = function() {
+    var newCard = cardTypes[Math.floor(Math.random() * cardTypes.length)];
+    newCard.id = Math.random();
+    $scope.cards.push(angular.extend({}, newCard));
+  }
+
+  $scope.cardSwipedLeft = function(index) {
+    // $scope.addCard();
+  };
+  $scope.cardSwipedRight = function(index) {
+    // $scope.addCard();
+  };
+
+  $("#like").on("click", function (){
+    var topCard = $("td-cards").find("td-card")[0];
+    $(topCard).remove()
+    // ionic.trigger('swiperight', {target: topCard});
+  });
+
+  $("#nope").on('click', function(){
+    var topCard = $("td-cards").find("td-card")[0];
+    $(topCard).remove()
+    // ionic.trigger('swipeleft', {target: topCard});
+  })
+
+})
+
+//   .controller('CardCtrl', function($scope, TDCardDelegate) {
+
+// })
+
 
 .controller('AppCtrl', function($scope, $rootScope, $ionicModal, $ionicPopover, $timeout, $window) {
 
@@ -246,49 +295,45 @@ angular.module('controllers', [])
         }
     });
 
+    var successCallback = function (data){
+        console.log("done");
+        // alert(data);
+        // var imageData = "'data:image/jpeg;base64,"+data+"'";
+        $('.hero').css("background-image", "url('data:image/jpeg;base64,"+data+"')");  
+    }
+
+    var errorCallback = function (error){
+        alert(error);
+        console.log("not done");
+    }
+
+    $("#editImage").on('click', function(){
+        navigator.camera.getPicture(successCallback, errorCallback, 
+            {
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                allowEdit: true,
+
+            }
+        );
+
+
+    });
+
 
 })
 
-.controller('FindMatchCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+.controller('FindMatchCtrl', function($ionicSideMenuDelegate, $scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
+    $ionicSideMenuDelegate.canDragContent(true)
     $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
     $scope.isExpanded = true;
     $scope.$parent.setExpanded(true);
-    $scope.$parent.setHeaderFab('right');
 
     $timeout(function() {
-        ionicMaterialMotion.fadeSlideIn({
-            selector: '.animate-fade-slide-in .item'
-        });
+        ionicMaterialMotion.fadeSlideInRight();
     }, 200);
 
-    // Activate ink for controller
     ionicMaterialInk.displayEffect();
-
-  //   $(".buddy").on("swiperight",function(){
-  //     $(this).addClass('rotate-left').delay(700).fadeOut(1);
-  //     $('.buddy').find('.status').remove();
-
-  //     $(this).append('<div class="status like">Like!</div>');      
-  //     if ( $(this).is(':last-child') ) {
-  //       $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-  //      } else {
-  //         $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-  //      }
-  //   });  
-
-  //  $(".buddy").on("swipeleft",function(){
-  //   $(this).addClass('rotate-right').delay(700).fadeOut(1);
-  //   $('.buddy').find('.status').remove();
-  //   $(this).append('<div class="status dislike">Dislike!</div>');
-
-  //   if ( $(this).is(':last-child') ) {
-  //    $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-  //     alert('Na-na!');
-  //    } else {
-  //       $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-  //   } 
-  // });
 
 
 })
@@ -324,7 +369,7 @@ angular.module('controllers', [])
             //     disableBack: true
             // });
             console.log("logging in");
-            $location.path('/app/profile')
+            $location.path('/app/find')
             $scope.$apply()
             // alert("Successful");
         }

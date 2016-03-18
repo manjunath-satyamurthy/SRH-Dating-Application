@@ -168,7 +168,8 @@
 .expanded .bar.bar-header .title, .bar.bar-header.expanded .title {
   bottom: 0;
   left: 42px !important;
-  top: initial; }
+  /*top: initial; */
+}
 
 .expanded.has-header-fab-left .bar.bar-header .title, .bar.bar-header.expanded.has-header-fab-left .title {
   left: 76px !important; }
@@ -2001,10 +2002,9 @@
 
 a {
   cursor: pointer; }
-
+/*
 .has-header.expanded {
-  /* Expanded modifier */
-  top: 76px; }
+  top: 76px; }*/
 
 /* Bar Overrides
 ==================================*/
@@ -2013,7 +2013,7 @@ a {
   padding: 0; }
 
 .bar .button {
-  min-height: 44px;
+  min-height: 50px;
   min-width: 44px;
   max-width: 48px;
   margin-bottom: 0;
