@@ -1,6 +1,6 @@
 <ion-view view-title="Find Match">
-    <ion-content ng-class="{expanded:isExpanded}" class="animate-fade-slide-in">
-        <div ng-controller="CardsCtrl">
+    <ion-content>
+        <div>
             <td-cards>
                 <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-swipe-left="cardSwipedLeft('true')" on-swipe-right="cardSwipedRight('true')" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
                     <div class="image">
@@ -16,17 +16,13 @@
                 </td-card>
             </td-cards>
         </div>
-        <div class="buttons customContent">
-            <span>
-                <button id="like" class="decideBTN button button-assertive button-fab activated">
-                    <i class="icon ion-heart"></i>
-                </button>
-            </span>
-            <span>
-                <button id="nope" class="decideBTN button button button-energized button-fab activated">
-                    <i class="icon ion-close"></i>
-                </button> 
-            </span>
+        <div class="customContent">
+            <button id="nope" class="decideBTN button button-energized">
+                <i class="icon ion-close"></i>
+            </button> 
+            <button id="like" class="decideBTN button button-assertive">
+                <i class="icon ion-heart"></i>
+            </button>
         </div>
     </ion-content>
 </ion-view>

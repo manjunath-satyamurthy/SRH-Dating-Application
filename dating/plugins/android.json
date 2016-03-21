@@ -27,6 +27,9 @@
         },
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.ionicframework.dating959720"
+        },
+        "cordova-sqlite-storage": {
+            "PACKAGE_NAME": "com.ionicframework.dating959720"
         }
     },
     "dependent_plugins": {}
