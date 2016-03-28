@@ -43,22 +43,12 @@ angular.module('starter', ['ionic', 'controllers', 'ionic-material', 'ionMdInput
         }
     })
 
-    .state('app.friends', {
-        url: '/friends',
+    .state('app.messages', {
+        url: '/messages',
         views: {
             'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
-            },
-        }
-    })
-
-    .state('app.gallery', {
-        url: '/gallery',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'GalleryCtrl'
+                templateUrl: 'templates/messages.html',
+                controller: 'MessagesCtrl'
             },
         }
     })

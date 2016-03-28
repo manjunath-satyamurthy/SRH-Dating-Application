@@ -1,135 +1,262 @@
-<ion-view view-title="Profile">
+<ion-view style="-webkit-transform: translateZ(0);" view-title="Profile">
+
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-        <div class="hero slide-up" style="background-image: url('img/daenerys.jpg');">
-            <span class="right-buttons">
-                <button id="editImage" class="button button-assertive button-fab activated">
+        <div class="hero slide-up" style="background-image: url('{{ imageUrl }}'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; background-color: #616161">
+      <!--       <span > -->
+              <div class="right-buttons">
+                <button id="editImage" class="button button-assertive activated">
                     <i class="icon ion-edit"></i>
                 </button>
-            </span>
+              </div>
+              <div class="right-buttons">
+                <button id="saveInfo" class="button button-energized activated" style="display: none;">
+                    <i class="icon ion-android-upload"></i>
+                </button>
+              </div>
+     <!--        </span> -->
         </div>
+
+
 
         <div class="tabs tabs-dark tabs-icon-top static" ng-controller="customTabs">
             <a id="basicInfo" class="tab-item custom-tabs tabSelected">
                 <i class="icon ion-ios-information-outline"></i> Basic Info
             </a>
-            <a id="interests" class="tab-item custom-tabs">
-                <i class="icon ion-android-star"></i> Interests
-            </a>
             <a id="lookingFor" class="tab-item custom-tabs">
                 <i class="icon ion-android-search"></i> Looking For
             </a>
         </div>
+
         <div class="basicInfo tabviews">
-            <div class="list basicInfo">
-              <a class="item">
-                <div class="leftSide">First Name</div> <div id="firstname" class="rightSide">Manjunath</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">First Name</div> <div id="firstname" class="col col-50 rightSide">{{ firstName }}</div>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Last Name</div> <div id="lastname" class="rightSide">Satyamurthy</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">Last Name</div> <div id="lastname" class="col col-50 rightSide">{{ lastName }}</div>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Age</div> <div id="age" class="rightSide">24</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">Age</div>
+                <div id="body" class="col col-50 rightSide">
+                  <input id="userAgeMinus" type='button' value='-' class='age minus edit'/>
+                  <span id="userAge" class="editable">{{ age }}</span>
+                  <input id="userAgeAdd" type='button' value='+' class='age plus edit' field='quantity' />
+                </div>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Sex</div> <div id="sex" class="rightSide">Male</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">Sex</div> 
+                <div id="body" class="col col-50 rightSide">
+                  <span id="userSexLeft" class="edit partner leftArrow ion ion-arrow-left-a"></span>
+                  <span id="userSex" class="editable">{{ sex }}</span>
+                  <span id="userSexRight" class="edit partner rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Height</div> <div id="ethnicity" class="rightSide">5.5</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">Height</div>
+                <div id="body" class="col col-50 rightSide">
+                  <input id="userHeightSub" type='button' value='-' class='height minus edit'/>
+                  <span id="userHeight" class="editable">{{ height }}</span>
+                  <input id="userHeightAdd" type='button' value='+' class='height plus edit' field='quantity' />
+                </div>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Weight</div> <div id="ethnicity" class="rightSide">75</div>
-              </a>
+              <div class="row">
+                <div class="col col-50 leftSide">Body Type</div>
+                <div id="body" class="col col-50 rightSide">
+                  <span id="userBodyLeft" class="edit body leftArrow ion ion-arrow-left-a"></span>
+                  <span id="userBody" class="editable">{{ bodyType }}</span>
+                  <span id="userBodyRight" class="edit body rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
+            </div>
 
-              <a class="item">
-                <div class="leftSide">Body Type</div> <div id="ethnicity" class="rightSide">average</div>
-              </a>
-              <a class="item">
-                <div class="leftSide">Ethinicity</div> <div id="ethnicity" class="rightSide">Indian</div>
-              </a>
+        <div class="lookingFor tabviews" style="display: none;">
+              <div class="row">
+                <div class="col col-50 leftSide">Partner</div> <div id="partner" class="col col-50 rightSide">
+                    <span id="paternerLeft" class="edit partner leftArrow ion ion-arrow-left-a"></span>
+                    <span id="partnerValue" class="customParagraph editable">{{ partner }}</span>
+                    <span id="partnerRight" class="edit partner rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-50 leftSide">Height</div>
+                <div id="height" class="col col-50 rightSide">
+                    <input id="heightSub" type='button' value='-' class='edit height minus'/>
+                    <span id="heightValue" class="customParagraph editable">{{ partnerHeight }}</span>
+                    <input id="heightAdd" type='button' value='+' class='edit height plus' field='quantity' />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-50 leftSide">Body type</div>
+                <div id="body" class="col col-50 rightSide">
+                    <span id="bodyLeft" class="edit body leftArrow ion ion-arrow-left-a"></span>
+                    <span id="bodyValue" class="customParagraph editable">{{ partnerBodyType }}</span>
+                    <span id="bodyRight" class="edit body rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col col-50 leftSide">Age between</div>
+                <div id="age" class="col col-50 rightSide">
+                    <input id="subtract" type='button' value='-' class='age minus'/>
+                    <span id="fromAge" class="edit customParagraph selectedAge ageselect editable">{{ fromAge }}</span>
+                    <span class="customParagraph">-</span>
+                    <span id="toAge" class="edit customParagraph ageselect editable">{{ toAge }}</span>
+                    <input id="add" type='button' value='+' class='age plus' field='quantity' />
+                </div>
+              </div>
+            </div>
 
 
+<!--         <div class="basicInfo tabviews">
+              <div class="row">
+                <div class="col col-50 leftSide">First Name</div> <div id="firstname" class="col col-50 rightSide">{{ firstName }}</div>
+              </div>
 
+              <div class="">
+                <div class="leftSide">Last Name</div> <div id="lastname" class="rightSide">{{ lastName }}</div>
+              </div>
+
+              <div class="item">
+                <div class="leftSide">Age</div>
+                <div id="body" class="rightSide">
+                  <input id="userAgeMinus" type='button' value='-' class='age minus edit'/>
+                  <span id="userAge" class="editable">{{ age }}</span>
+                  <input id="userAgeAdd" type='button' value='+' class='age plus edit' field='quantity' />
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="leftSide">Sex</div> 
+                <div id="body" class="rightSide">
+                  <span id="userSexLeft" class="edit partner leftArrow ion ion-arrow-left-a"></span>
+                  <span id="userSex" class="editable">{{ sex }}</span>
+                  <span id="userSexRight" class="edit partner rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="leftSide">Height</div>
+                <div id="body" class="rightSide">
+                  <input id="userHeightSub" type='button' value='-' class='height minus edit'/>
+                  <span id="userHeight" class="editable">{{ height }}</span>
+                  <input id="userHeightAdd" type='button' value='+' class='height plus edit' field='quantity' />
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="leftSide">Body Type</div>
+                <div id="body" class="rightSide">
+                  <span id="userBodyLeft" class="edit body leftArrow ion ion-arrow-left-a"></span>
+                  <span id="userBody" class="editable">{{ bodyType }}</span>
+                  <span id="userBodyRight" class="edit body rightArrow ion ion-arrow-right-a"></span>
+                </div>
+              </div>
             </div>
         </div>
-        <div class="interests tabviews" style="display: none;">
-            <div class="list interests">
-              <a class="item">
-                <div class="leftSide">Music</div> <div id="music" class="rightSide">Rock</div>
-              </a>
 
-              <a class="item">
-                <div class="leftSide">Food Habits</div> <div id="food" class="rightSide">Indian</div>
-              </a>
-
-              <a class="item">
-                <div class="leftSide">Driking</div> <div id="drink" class="rightSide">Yes</div>
-              </a>
-
-              <a class="item">
-                <div class="leftSide">Smoking</div> <div id="smoke" class="rightSide">Yes</div>
-              </a>
-
-              <a class="item">
-                <div class="leftSide">Books</div> <div id="books" class="rightSide">Something</div>
-              </a>
-
-            </div>
-        </div>
         <div class="lookingFor tabviews" style="display: none;">
             <div class="list lookingFor">
-              <a class="item">
+              <div class="item">
                 <div class="leftSide">Partner</div> <div id="partner" class="rightSide">
-                    <span id="paternerLeft" class="partner leftArrow ion ion-arrow-left-a"></span>
-                    <span id="partnerValue" class="customParagraph">Female</span>
-                    <span id="partnerRight" class="partner rightArrow ion ion-arrow-right-a"></span>
+                    <span id="paternerLeft" class="edit partner leftArrow ion ion-arrow-left-a"></span>
+                    <span id="partnerValue" class="customParagraph editable">{{ partner }}</span>
+                    <span id="partnerRight" class="edit partner rightArrow ion ion-arrow-right-a"></span>
                 </div>
-              </a>
+              </div>
 
-              <a class="item">
+              <div class="item">
                 <div class="leftSide">Height</div>
                 <div id="height" class="rightSide">
-                    <input id="heightSub" type='button' value='-' class='height minus'/>
-                    <span id="heightValue" class="customParagraph">5.0</span>
-                    <input id="heightAdd" type='button' value='+' class='height plus' field='quantity' />
+                    <input id="heightSub" type='button' value='-' class='edit height minus'/>
+                    <span id="heightValue" class="customParagraph editable">{{ partnerHeight }}</span>
+                    <input id="heightAdd" type='button' value='+' class='edit height plus' field='quantity' />
                 </div>
-              </a>
+              </div>
 
-              <a class="item">
-                <div class="leftSide">Complexion</div>
-                <div id="complexion" class="rightSide">
-                    <span id="complexionLeft" class="complexion leftArrow ion ion-arrow-left-a"></span>
-                    <span id="complexionValue" class="customParagraph">Fair</span>
-                    <span id="complexionRight" class="complexion rightArrow ion ion-arrow-right-a"></span>
-                </div>
-              </a>
-
-              <a class="item">
+              <div class="item">
                 <div class="leftSide">Body type</div>
                 <div id="body" class="rightSide">
-                    <span id="bodyLeft" class="body leftArrow ion ion-arrow-left-a"></span>
-                    <span id="bodyValue" class="customParagraph">Slim</span>
-                    <span id="bodyRight" class="body rightArrow ion ion-arrow-right-a"></span>
+                    <span id="bodyLeft" class="edit body leftArrow ion ion-arrow-left-a"></span>
+                    <span id="bodyValue" class="customParagraph editable">{{ partnerBodyType }}</span>
+                    <span id="bodyRight" class="edit body rightArrow ion ion-arrow-right-a"></span>
                 </div>
-              </a>
+              </div>
 
-              <a class="item">
+              <div class="item">
                 <div class="leftSide">Age between</div>
                 <div id="age" class="rightSide">
                     <input id="subtract" type='button' value='-' class='age minus'/>
-                    <span id="fromAge" class="customParagraph selectedAge ageselect">18</span>
+                    <span id="fromAge" class="edit customParagraph selectedAge ageselect editable">{{ fromAge }}</span>
                     <span class="customParagraph">-</span>
-                    <span id="toAge" class="customParagraph ageselect">30</span>
+                    <span id="toAge" class="edit customParagraph ageselect editable">{{ toAge }}</span>
                     <input id="add" type='button' value='+' class='age plus' field='quantity' />
                 </div>
-              </a>
+              </div>
 
             </div>
         </div>
 
     </ion-content>
 </ion-view>
+
+
+        <div class="lookingFor tabviews" style="display: none;">
+              <div class="row customRow">
+                <div class="col col-50 leftSide">First Name</div>
+                <div id="firstname" class="col col-50">{{ firstName }}</div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col col-50">
+                  
+                </div>
+                <div class="col col-50">
+                  
+                </div>
+              </div>
+        </div>

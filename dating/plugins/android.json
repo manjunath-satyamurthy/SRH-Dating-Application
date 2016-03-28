@@ -30,6 +30,12 @@
         },
         "cordova-sqlite-storage": {
             "PACKAGE_NAME": "com.ionicframework.dating959720"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.dating959720"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "com.ionicframework.dating959720"
         }
     },
     "dependent_plugins": {}

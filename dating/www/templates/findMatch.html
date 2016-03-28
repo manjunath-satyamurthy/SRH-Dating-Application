@@ -2,14 +2,15 @@
     <ion-content>
         <div>
             <td-cards>
-                <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-swipe-left="cardSwipedLeft('true')" on-swipe-right="cardSwipedRight('true')" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}">
+                <td-card ng-repeat="card in cards" on-destroy="cardDestroyed()" on-swipe-left="cardSwipedLeft('true')" on-swipe-right="cardSwipedRight('true')" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{ card.index }}" style="z-index:{{ cards.length - card.index}}; -webkit-transform : translate3d(0, {{card.index*4}}px, 0)">
                     <div class="image">
                         <div class="no-text">NOPE</div>
-                        <img ng-src="{{card.image}}">
+                        <div class="imageDiv" style="background-image: url('{{ card.imageUrl }}'); background-size: cover; background-repeat: no-repeat; background-position: 50% 50%; background-color: #616161"></div>
+                        <!-- <img ng-src="{{card.image}}"> -->
                         <div class="profileInfo">
-                            <p class="profileInformation">Name : Bullbull</p>
-                            <p class="profileInformation">Age : 24</p>
-                            <p class="profileInformation">Sex : Male</p>
+                            <p class="profileInformation">Name : {{ card.name }}</p>
+                            <p class="profileInformation">Age : {{ card.age }}</p>
+                            <p class="profileInformation">Sex : {{ card.sex }}</p>
                         </div>
                         <div class="yes-text">LIKE</div>
                     </div>
